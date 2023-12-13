@@ -1,5 +1,7 @@
 let intentos = 6;
-let palabra = "APPLE";
+let diccionario = ['MANZANA', 'PERA', 'UVA', 'AGUACATE', 'SANDIA', 'BANANA']
+const palabra = diccionario[Math.floor(Math.random() * diccionario.length)];
+
 const button = document.getElementById("guess-button");
 button.addEventListener("click", intentar);
 const GRID = document.getElementById("grid");
@@ -29,7 +31,7 @@ function intentar(){
         }else if( palabra.includes(INTENTO[i]) ) { //AMARILLO
             SPAN.innerHTML = INTENTO[i];
             SPAN.style.backgroundColor = 'yellow';
-        }else {      //GRIS
+        }else {//GRIS
             SPAN.innerHTML = INTENTO[i];
             SPAN.style.backgroundColor = 'grey';
         }
